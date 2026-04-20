@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark" data-style="normal">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio_Ikkun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Saira:wght@400;700&family=Saira+Extra+Condensed:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="icon" type="image/png" href="assets/img/avatar-pixel.jpg">
+</head>
+
+<body>
+
+  <!-- Navigation-->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-avatar-wrapper">
+          <img src="assets/img/avatar.jpg" alt="Avatar" id="nav-avatar" class="nav-avatar">
+        </div>
+        <div class="nav-brand">
+          <a href="#hero">Portfolio</a>
+        </div>
+        <div id="mascot" class="mascot-item">
+          <img src="assets/gif/mascot.gif" alt="Mascot" id="mascot-img">
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#about" data-vi="Giới thiệu" data-en="About me">Giới thiệu</a></li>
+          <li><a href="#skills" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</a></li>
+          <li><a href="#projects" data-vi="Dự án" data-en="Projects">Dự án</a></li>
+          <li><a href="#achievements" data-vi="Thành tích" data-en="Achievements">Thành tích</a></li>
+          <li><a href="#contact" data-vi="Liên hệ" data-en="Contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-controls">
+          <button id="lang-toggle" class="btn-icon" title="Switch Language">
+            <img src="assets/img/vn-flag.png" alt="Language" id="lang-icon">
+          </button>
+
+          <button id="style-toggle-btn" class="btn-icon" title="Toggle 8-Bit Style">
+            <span class="game-icon">🎮</span>
+          </button>
+
+          <button id="darkmode-toggle" class="btn-icon" title="Toggle Dark Mode">
+            <img src="assets/img/sun.png" alt="DarkMode" id="mode-icon">
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero-->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-label">
+          <span class="dot"></span>
+          <span class="hero-status-text" data-vi="Sẵn sàng cho các dự án mới" data-en="Available for new projects">
+            Sẵn sàng cho các dự án mới
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-intro" data-vi="Xin chào, tôi là" data-en="Hi, I'm">Xin chào, tôi là</span>
+          <span class="gradient">Minh Quân</span><br>
+          <span id="hero-sub" class="hero-sub" data-vi="Hoặc bạn có thể gọi tôi là Ikkun"
+            data-en="Or you can call me Ikkun">
+            Hoặc bạn có thể gọi tôi là Ikkun
+          </span>
+        </h1>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <span data-vi="✦ Xem Dự Án" data-en="✦ View Projects">✦ Xem Dự Án</span>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span data-vi="→ Liên Hệ" data-en="→ Get in Touch">→ Liên Hệ</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>3.4</h3>
+            <p>GPA</p>
+          </div>
+          <div class="hero-stat">
+            <h3>3rd</h3>
+            <p data-vi="Năm học" data-en="Year">Năm học</p>
+          </div>
+          <div class="hero-stat">
+            <h3>Software| Website| Game</h3>
+            <p data-vi="Đam mê" data-en="Passion">Đam mê</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+  </section>
+
+  <!-- About me-->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-image">
+          <div class="image-frame">
+            <img src="assets/img/avatar.jpg" alt="Nguyễn Hữu Minh Quân" id="about-avatar" class="main-img">
+            <img src="assets/img/miku-frame2.png" alt="Frame" class="miku-decorative-frame">
+          </div>
+          <div class="gpa-badge">
+            <span class="label">GPA:</span>
+            <span class="value">3.4</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <h2 id="about-title" class="section-title" data-vi="Giới thiệu" data-en="About Me">Giới thiệu</h2>
+
+          <h3 id="name-highlight" class="name-highlight" data-vi="Nguyễn Hữu Minh Quân" data-en="Nguyen Huu Minh Quan">
+            Nguyễn Hữu Minh Quân</h3>
+          <p class="role-text" data-vi="Sinh viên năm 3 | Công nghệ Thông tin"
+            data-en="Junior Student | Information Technology">Sinh viên năm 3 | Công nghệ Thông tin</p>
+
+          <div class="description-box">
+            <p data-vi="Hiện tại, tôi đang là sinh viên năm 3 chuyên ngành Công nghệ thông tin tại <strong>Trường Đại học Sư phạm TP.HCM</strong>. Với niềm đam mê mãnh liệt dành cho lập trình web và thiết kế giao diện, tôi luôn nỗ lực tạo ra những trải nghiệm số ấn tượng."
+              data-en="Currently, I am a junior majoring in Information Technology at <strong>Ho Chi Minh City University of Education (HCMUE)</strong>. With an intense passion for web programming and UI design, I always strive to create impressive digital experiences.">
+              Hiện tại, tôi đang là sinh viên năm 3 chuyên ngành Công nghệ thông tin tại
+              <strong>Trường Đại học Sư phạm TP.HCM</strong>. Với niềm đam mê mãnh liệt dành cho
+              lập trình web và thiết kế giao diện, tôi luôn nỗ lực tạo ra những trải nghiệm số ấn tượng.
+            </p>
+            <p data-vi="<strong>Điểm mạnh:</strong> Có khả năng tự học tốt, tư duy logic nhạy bén và sự tỉ mỉ trong việc tối ưu hóa giao diện người dùng (UI/UX). Tôi yêu thích phong cách thiết kế Game/Anime và luôn tìm cách đưa sự sáng tạo đó vào các sản phẩm công nghệ."
+              data-en="<strong>Strengths:</strong> Strong self-learning ability, sharp logical thinking, and meticulousness in optimizing UI/UX. I love Game/Anime design styles and always find ways to bring that creativity into technology products.">
+              <strong>Điểm mạnh:</strong> Có khả năng tự học tốt, tư duy logic nhạy bén và sự tỉ mỉ trong việc
+              tối ưu hóa giao diện người dùng (UI/UX). Tôi yêu thích phong cách thiết kế Game/Anime và
+              luôn tìm cách đưa sự sáng tạo đó vào các sản phẩm công nghệ.
+            </p>
+          </div>
+
+          <div class="edu-info">
+            <div class="info-item">
+              <span class="icon">🎓</span>
+              <div class="text">
+                <span class="info-label" data-vi="Học vấn" data-en="Education">Học vấn</span>
+                <span class="info-value" data-vi="Đại học Sư phạm TP.HCM 2023-2027"
+                  data-en="HCM City University of Education 2023-2027">Đại học Sư phạm TP.HCM 2023-2027</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">🚀</span>
+              <div class="text">
+                <span class="info-label" data-vi="Chuyên môn" data-en="Specialization">Chuyên môn</span>
+                <span class="info-value" data-vi="Fullstack Development / Game Developer"
+                  data-en="Fullstack Development / Game Developer">Fullstack Development / Game Developer</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">📅</span>
+              <div class="text">
+                <span class="info-label" data-vi="Trạng thái" data-en="Status">Trạng thái</span>
+                <span class="info-value" data-vi="Sinh viên năm 3" data-en="Junior Student">Sinh viên năm 3</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">💻</span>
+              <div class="text">
+                <span class="info-label" data-vi="Ngôn ngữ" data-en="Languages">Ngôn ngữ</span>
+                <span class="info-value">C++, C#, Python, Dart, JS, TS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="skills-title" class="section-title" data-vi="Kỹ năng & Chuyên môn" data-en="Skills & Expertise">Kỹ năng
+          & Chuyên môn</h2>
+      </div>
+
+      <!-- Categories Grid -->
+      <div class="skills-categories-grid">
+        <!-- Backend Engineering -->
+        <div class="skill-category-card">
+          <div class="card-glow"></div>
+          <div class="card-icon-header">
+            <span class="icon-box">⚙️</span>
+          </div>
+          <h3 data-vi="Backend Engineering" data-en="Backend Engineering">Backend Engineering</h3>
+          <p class="card-desc"
+            data-vi="Xây dựng REST API với xác thực JWT, tích hợp thanh toán, bộ nhớ đệm và tối ưu hóa truy vấn."
+            data-en="Building REST APIs with JWT authentication, payment integration, caching, and query optimization.">
+            Building REST APIs with JWT authentication, payment integration, caching, and query optimization.</p>
+          <div class="card-tags">
+            <span class="tag">NestJS</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag highlight">Node.js</span>
+            <span class="tag">REST API</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+
+        <!-- Frontend Development -->
+        <div class="skill-category-card">
+          <div class="card-glow"></div>
+          <div class="card-icon-header">
+            <span class="icon-box">🎨</span>
+          </div>
+          <h3 data-vi="Frontend Development" data-en="Frontend Development">Frontend Development</h3>
+          <p class="card-desc"
+            data-vi="Tạo giao diện phản hồi với React, Tailwind css, Material-UI và tối ưu hóa phía Client."
+            data-en="Creating responsive UIs with React, Tailwind css, state management, Material-UI, and Client-side optimization.">
+            Creating responsive UIs with React, Tailwind css, state management, Material-UI, and Client-side
+            optimization.</p>
+          <div class="card-tags">
+            <span class="tag highlight">React + Vite</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind css</span>
+            <span class="tag">Material-UI</span>
+          </div>
+        </div>
+
+        <!-- Database & ORM -->
+        <div class="skill-category-card">
+          <div class="card-glow"></div>
+          <div class="card-icon-header">
+            <span class="icon-box">💾</span>
+          </div>
+          <h3 data-vi="Database & ORM" data-en="Database & ORM">Database & ORM</h3>
+          <p class="card-desc"
+            data-vi="Thiết kế mô hình dữ liệu, viết truy vấn tối ưu và quản lý lược đồ cơ sở dữ liệu với ORM."
+            data-en="Designing data models, writing optimized queries, and managing database schemas with ORMs.">
+            Designing data models, writing optimized queries, and managing database schemas with ORMs.</p>
+          <div class="card-tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Redis</span>
+            <span class="tag highlight">MongoDB</span>
+          </div>
+        </div>
+
+        <!-- Auth & Security -->
+        <div class="skill-category-card">
+          <div class="card-glow"></div>
+          <div class="card-icon-header">
+            <span class="icon-box">🔐</span>
+          </div>
+          <h3 data-vi="Auth & Security" data-en="Auth & Security">Auth & Security</h3>
+          <p class="card-desc"
+            data-vi="Triển khai xác thực JWT, RBAC, bảo vệ định tuyến và các quy trình bảo mật tốt nhất."
+            data-en="Implementing JWT authentication, RBAC, protected routing, and security best practices.">
+            Implementing JWT authentication, RBAC, protected routing, and security best practices.</p>
+          <div class="card-tags">
+            <span class="tag highlight">JWT</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">OAuth2</span>
+          </div>
+        </div>
+
+        <!-- Game Development (Customized from Reference) -->
+        <div class="skill-category-card">
+          <div class="card-glow"></div>
+          <div class="card-icon-header">
+            <span class="icon-box">🎮</span>
+          </div>
+          <h3 data-vi="Game Engineering" data-en="Game Engineering">Game Engineering</h3>
+          <p class="card-desc"
+            data-vi="Phát triển trò chơi đa nền tảng với engine mạnh mẽ, tối ưu hóa hiệu năng và thiết kế logic game phức tạp."
+            data-en="Cross-platform game development with powerful engines, performance optimization, and complex game logic design.">
+            Cross-platform game development with powerful engines, performance optimization, and complex game logic
+            design.</p>
+          <div class="card-tags">
+            <span class="tag highlight">Unity</span>
+            <span class="tag">Unreal Engine</span>
+            <span class="tag">C#</span>
+            <span class="tag">C++</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="skill-category-card">
+          <div class="card-glow"></div>
+          <div class="card-icon-header">
+            <span class="icon-box">🚀</span>
+          </div>
+          <h3 data-vi="DevOps & Tools" data-en="DevOps & Tools">DevOps & Tools</h3>
+          <p class="card-desc" data-vi="Container hóa, quản lý phiên bản và quy trình triển khai cho ứng dụng hiện đại."
+            data-en="Containerization, version control, and deployment workflows for modern applications.">
+            Containerization, version control, and deployment workflows for modern applications.</p>
+          <div class="card-tags">
+            <span class="tag highlight">Docker</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Docker Compose</span>
+            <span class="tag">Android Studio</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Grid Title -->
+      <div class="tech-grid-header">
+        <h3 class="saria-mode-text" data-vi="Công cụ & Công nghệ" data-en="Technologies I Work With">Technologies I Work
+          With</h3>
+      </div>
+
+      <!-- Tech Grid -->
+      <div class="technologies-grid">
+        <div class="tech-item"><i class="devicon-javascript-plain colored"></i> <span>JavaScript</span></div>
+        <div class="tech-item"><i class="devicon-typescript-plain colored"></i> <span>TypeScript</span></div>
+        <div class="tech-item"><i class="devicon-python-plain colored"></i> <span>Python</span></div>
+        <div class="tech-item"><i class="devicon-cplusplus-plain colored"></i> <span>C++</span></div>
+        <div class="tech-item"><i class="devicon-csharp-plain colored"></i> <span>C#</span></div>
+        <div class="tech-item"><i class="devicon-react-original colored"></i> <span>React</span></div>
+        <div class="tech-item"><i class="devicon-nextjs-plain"></i> <span>Next.js</span></div>
+        <div class="tech-item"><i class="devicon-nestjs-original colored"></i> <span>NestJS</span></div>
+        <div class="tech-item"><i class="devicon-php-plain colored"></i> <span>PHP</span></div>
+        <div class="tech-item"><i class="devicon-laravel-original colored"></i> <span>Laravel</span></div>
+        <div class="tech-item"><i class="devicon-mongodb-plain colored"></i> <span>MongoDB</span></div>
+        <div class="tech-item"><i class="devicon-postgresql-plain colored"></i> <span>PostgreSQL</span></div>
+        <div class="tech-item"><i class="devicon-redis-plain colored"></i> <span>Redis</span></div>
+        <div class="tech-item"><i class="devicon-docker-plain colored"></i> <span>Docker</span></div>
+        <div class="tech-item"><i class="devicon-git-plain colored"></i> <span>Git</span></div>
+        <div class="tech-item"><i class="devicon-unity-plain"></i> <span>Unity</span></div>
+        <div class="tech-item"><i class="devicon-unrealengine-original"></i> <span>Unreal Engine</span></div>
+        <div class="tech-item"><i class="devicon-androidstudio-plain colored"></i> <span>Android Studio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="projects-title" class="section-title" data-vi="Dự án nổi bật" data-en="Projects">Projects</h2>
+      </div>
+
+      <!-- Project Filters -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
+        <button class="filter-btn" data-filter="web" data-vi="Web" data-en="Web">Web</button>
+        <button class="filter-btn" data-filter="soft" data-vi="Software/App"
+          data-en="Software/App">Software/App</button>
+        <button class="filter-btn" data-filter="game" data-vi="Game" data-en="Game">Game</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1: Mirai Store -->
+        <div class="project-card" data-category="web">
+          <div class="project-image-wrapper">
+            <img src="assets/img/MiraiShop.png" alt="Mirai Store" class="project-img">
+            <div class="project-overlay">
+              <div class="overlay-links">
+                <a href="https://mirai-store-pzz3.onrender.com" target="_blank" class="btn-detail">DEMO</a>
+                <a href="https://github.com/minquan-kun/shop_game" target="_blank" class="btn-detail">GITHUB</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">E-COMMERCE PLATFORM</span>
+            <h3 class="project-title">Mirai Store</h3>
+            <p class="project-desc"
+              data-vi="Hệ thống bán game bản quyền tích hợp AI Chatbot, gợi ý game thông minh và thanh toán MoMo/PayPal."
+              data-en="Game store platform featuring AI Chatbot, Recommendation System, and MoMo/PayPal integration.">
+              Hệ thống bán game bản quyền tích hợp AI Chatbot, gợi ý game thông minh và thanh toán MoMo/PayPal.
+            </p>
+            <div class="project-tags">
+              <span class="tag highlight">Laravel 11</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">TailwindCSS</span>
+              <span class="tag">Docker</span>
+              <span class="tag">AI Chatbot</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: TODOAPP -->
+        <div class="project-card" data-category="soft">
+          <div class="project-image-wrapper">
+            <img src="assets/img/TodoApp.png" alt="TodoApp" class="project-img">
+            <div class="project-overlay">
+              <div class="overlay-links">
+                <a href="https://todoapp-ozbt.onrender.com" target="_blank" class="btn-detail">DEMO</a>
+                <a href="https://github.com/MinQuan-kun/TodoApp.git" target="_blank" class="btn-detail">GITHUB</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">AI TASK MANAGER</span>
+            <h3 class="project-title">TodoApp AI</h3>
+            <p class="project-desc"
+              data-vi="Quản lý công việc thông minh với Trợ lý ảo Miku (Gemini AI), tích hợp Redis để tối ưu hiệu suất."
+              data-en="Smart task manager with Miku Virtual Assistant (Gemini AI), featuring Redis caching for high performance.">
+              Quản lý công việc thông minh với Trợ lý ảo Miku (Gemini AI), tích hợp Redis để tối ưu hiệu suất.
+            </p>
+            <div class="project-tags">
+              <span class="tag highlight">React 19</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Redis</span>
+              <span class="tag">Gemini AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: 2d_platforme -->
+        <div class="project-card" data-category="game">
+          <div class="project-image-wrapper">
+            <img src="assets/img/2DPlatForm.png" alt="Basic Platform Game" class="project-img">
+            <div class="project-overlay">
+              <div class="overlay-links">
+                <a href="https://github.com/minquan-kun/2d_platformer" target="_blank" class="btn-detail">GITHUB</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">2D GAME DEVELOPMENT</span>
+            <h3 class="project-title">Basic Platformer</h3>
+            <p class="project-desc"
+              data-vi="Game 2D Platformer cơ bản tập trung vào xử lý vật lý, hệ thống mạng sống và animation nhân vật mượt mà."
+              data-en="A fundamental 2D Platformer focusing on physics handling, health systems, and smooth character animations.">
+              Game 2D Platformer cơ bản tập trung vào xử lý vật lý, hệ thống mạng sống và animation nhân vật mượt mà.
+            </p>
+            <div class="project-tags">
+              <span class="tag highlight">Unity</span>
+              <span class="tag highlight">C#</span>
+              <span class="tag">2D Physics</span>
+              <span class="tag">Animation</span>
+              <span class="tag">Double Jump</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Cinema Galyxa -->
+        <div class="project-card" data-category="web">
+          <div class="project-image-wrapper">
+            <img src="assets/img/CinameGalyxa.png" alt="Ciname Galyxa" class="project-img">
+            <div class="project-overlay">
+              <div class="overlay-links">
+                <a href="https://github.com/minquan-kun/ciname_galyxa" target="_blank" class="btn-detail">GITHUB</a>
+                <a href="https://ciname-galyxa.onrender.com" target="_blank" class="btn-detail">DEMO</a>
+
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">FULL-STACK MOVIE BOOKING</span>
+            <h3 class="project-title">Ciname Galyxa</h3>
+            <p class="project-desc"
+              data-vi="Hệ thống đặt vé xem phim trực tuyến hiện đại với trải nghiệm mượt mà từ chọn phim, chọn ghế đến thanh toán và quản trị rạp phim."
+              data-en="A modern online movie booking system featuring seat selection, combo management, and a powerful admin dashboard.">
+              Hệ thống đặt vé xem phim trực tuyến hiện đại với trải nghiệm mượt mà từ chọn phim, chọn ghế đến thanh toán
+              và quản trị rạp phim.
+            </p>
+            <div class="project-tags">
+              <span class="tag highlight">Next.js 14</span>
+              <span class="tag highlight">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">JWT Auth</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: OOP LOOKUP -->
+        <div class="project-card" data-category="web">
+          <div class="project-image-wrapper">
+            <img src="assets/img/OOPLOOKUP.png" alt="OOP Lookup System" class="project-img">
+            <div class="project-overlay">
+              <div class="overlay-links">
+                <a href="https://github.com/minquan-kun/oop-lookup-system" target="_blank" class="btn-detail">GITHUB</a>
+                <a href="https://oop-frontend.onrender.com" target="_blank" class="btn-detail">DEMO</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">EDUCATION & DEV TOOLS</span>
+            <h3 class="project-title">OOP Lookup System</h3>
+            <p class="project-desc"
+              data-vi="Hệ thống tra cứu kiến thức lập trình hướng đối tượng (OOP) đa ngôn ngữ, tích hợp cây kiến thức trực quan và AI Chatbot hỗ trợ giải đáp thắc mắc."
+              data-en="A multi-language OOP concept lookup system featuring an interactive knowledge tree and an AI Chatbot for instant programming support.">
+              Hệ thống tra cứu kiến thức lập trình hướng đối tượng (OOP) đa ngôn ngữ, tích hợp cây kiến thức trực quan
+              và AI Chatbot hỗ trợ giải đáp thắc mắc.
+            </p>
+            <div class="project-tags">
+              <span class="tag highlight">Next.js</span>
+              <span class="tag highlight">Node.js</span>
+              <span class="tag highlight">AI Integration</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: InterNetCoffee -->
+        <div class="project-card" data-category="web">
+          <div class="project-image-wrapper">
+            <img src="assets/img/InternetCoffee.png" alt="CyberOps Manager" class="project-img">
+            <div class="project-overlay">
+              <div class="overlay-links">
+                <a href="https://github.com/mrt223/internet-coffee-manager" target="_blank"
+                  class="btn-detail">GITHUB</a>
+                <a href="https://internet-coffee-manager-d87o.onrender.com" target="_blank" class="btn-detail">DEMO</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">CYBER GAME MANAGEMENT</span>
+            <h3 class="project-title">CyberOps Manager</h3>
+            <p class="project-desc"
+              data-vi="Hệ thống quản lý tiệm net toàn diện: tích hợp AI Gemini hỗ trợ khách hàng, sơ đồ máy tính thời gian thực, quản lý nạp tiền và gọi món trực tuyến."
+              data-en="Advanced Cyber Coffee management platform featuring Gemini AI support, real-time computer mapping, and online billing/ordering system.">
+              Hệ thống quản lý tiệm net toàn diện: tích hợp AI Gemini hỗ trợ khách hàng, sơ đồ máy tính thời gian thực,
+              quản lý nạp tiền và gọi món trực tuyến.
+            </p>
+            <div class="project-tags">
+              <span class="tag highlight">Next.js</span>
+              <span class="tag highlight">Node.js</span>
+              <span class="tag highlight">Gemini AI</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Socket.io</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects in Progress Section -->
+      <div class="ongoing-section">
+        <div class="ongoing-header">
+          <h3 class="ongoing-title" data-vi="Đang thi công" data-en="Currently Working On">Đang thi công</h3>
+        </div>
+        <div class="ongoing-container">
+          <!-- Ongoing Item 1 -->
+          <div class="ongoing-card">
+            <div class="ongoing-img-wrapper">
+              <img src="assets/img/Roadmap.png" alt="Ongoing" class="ongoing-img">
+            </div>
+            <div class="ongoing-info">
+              <h4 data-vi="RoadMap GameDev" data-en="GameDev Roadmap">RoadMap GameDev</h4>
+              <p data-vi="Nền tảng xây dựng lộ trình học tập Game Development chuyên sâu với công cụ kéo thả, bài trắc nghiệm nghề nghiệp và tìm kiếm việc làm."
+                data-en="Advanced Game Development roadmap builder featuring drag-and-drop tools, career quizzes, and job search integration.">
+                Nền tảng xây dựng lộ trình học tập Game Development chuyên sâu với công cụ kéo thả, bài trắc nghiệm nghề
+                nghiệp và tìm kiếm việc làm.
+              </p>
+              <div class="wip-status">
+                <span class="dot"></span>
+                <span data-vi="Đang phát triển" data-en="In Development">Đang phát triển</span>
+                <span class="loading-dots"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ongoing Item 2 -->
+          <div class="ongoing-card">
+            <div class="ongoing-img-wrapper">
+              <img src="assets/img/project-wip.png" alt="Ongoing" class="ongoing-img">
+            </div>
+            <div class="ongoing-info">
+              <h4 data-vi="Game indie" data-en="Game indie">Game indie</h4>
+              <p data-vi="Game indie" data-en="Game indie">
+                Game indie
+              </p>
+              <div class="wip-status">
+                <span class="dot"></span>
+                <span data-vi="Đang phát triển" data-en="In Development">Đang phát triển</span>
+                <span class="loading-dots"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="achievements-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="achievements-title" class="section-title" data-vi="Thành tích & Chứng chỉ"
+          data-en="Achievements & Certifications">Thành tích & Chứng chỉ</h2>
+      </div>
+
+      <div class="achievements-grid">
+        <!-- Achievements Sub-section -->
+        <div class="achievement-column">
+          <h3 class="subsection-title" data-vi="🏆 Achievements" data-en="🏆 Achievements">🏆 Achievements</h3>
+          <div class="achievement-list">
+            <!-- Research Paper 1 -->
+            <div class="achievement-item card-glow-hover">
+              <div class="ach-icon">📝</div>
+              <div class="ach-info">
+                <h4 class="ach-name" data-vi="MỘT MÔ HÌNH MÔ TẢ HÌNH ẢNH KẾT HỢP ĐỒ THỊ TRI THỨC VÀ MẠNG HỌC SÂU.
+" data-en="An Image Captioning Model Integrating Knowledge Graphs and Deep Learning.">MỘT MÔ HÌNH MÔ TẢ HÌNH ẢNH KẾT
+                  HỢP ĐỒ THỊ TRI THỨC VÀ MẠNG HỌC SÂU.
+                </h4>
+                <p class="ach-meta">
+                  <span class="ach-org" data-vi="Tạp chí Khoa học & Công nghệ"
+                    data-en="TNU Journal of Science & Technology">Tạp chí khoa học và công nghệ đại học Thái
+                    Nguyên</span> •
+                  <span class="ach-date">27/06/2025</span><br>
+                  <a href="https://doi.org/10.34238/tnu-jst.12614" target="_blank" class="ach-doi">
+                    DOI: 10.34238/tnu-jst.12614
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Award 1 -->
+            <div class="achievement-item card-glow-hover award-item">
+              <div class="ach-icon">🌟</div>
+              <div class="ach-info">
+                <h4 class="ach-name" data-vi="Giải thưởng Nghiên cứu Khoa học Sinh viên"
+                  data-en="Student Scientific Research Award">Giải thưởng Nghiên cứu Khoa học Sinh viên</h4>
+                <p class="ach-meta">
+                  <span class="ach-org" data-vi="Trường Đại học Sư phạm TP.HCM"
+                    data-en="HCM City University of Education">Trường Đại học Sư phạm TP.HCM</span> •
+                  <span class="ach-date">2023</span>
+                </p>
+                <p class="ach-desc" data-vi="Giải ba nghiên cứu khoa học 2023-2024"
+                  data-en="Third Prize in Scientific Research 2023-2024">Giải ba nghiên cứu khoa học 2023-2024</p>
+                <div class="ach-img-container">
+                  <img src="assets/img/NCKH.jpg" alt="Award Image" class="ach-img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificates Sub-section -->
+        <div class="achievement-column">
+          <h3 class="subsection-title" data-vi="📜 Certificates" data-en="📜 Certificates">📜 Certificates</h3>
+
+          <div class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card">
+              <div class="cert-img-container">
+                <img src="assets/img/Cer1.png" alt="Certificate" class="cert-img">
+                <div class="cert-overlay">
+                  <a href="https://www.skills.google/public_profiles/cd7a7f81-ee20-4667-8521-06596ab35885/badges/23295042"
+                    class="btn-cert-view" data-vi="XEM" data-en="VIEW">XEM</a>
+                </div>
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-name">AI Boost Bites: Poke Holes in Your Strategy</h4>
+              </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card">
+              <div class="cert-img-container">
+                <img src="assets/img/Cer2.png" alt="Certificate" class="cert-img">
+                <div class="cert-overlay">
+                  <a href="https://www.skills.google/public_profiles/cd7a7f81-ee20-4667-8521-06596ab35885/badges/23295000"
+                    class="btn-cert-view" data-vi="XEM" data-en="VIEW">XEM</a>
+                </div>
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-name">AI Boost Bites: Presentation Scripts with Gemini</h4>
+              </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card">
+              <div class="cert-img-container">
+                <img src="assets/img/Cer3.png" alt="Certificate" class="cert-img">
+                <div class="cert-overlay">
+                  <a href="https://www.skills.google/public_profiles/cd7a7f81-ee20-4667-8521-06596ab35885/badges/23294724"
+                    class="btn-cert-view" data-vi="XEM" data-en="VIEW">XEM</a>
+                </div>
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-name">AI Boost Bites: Create Your Own Retro Arcade Game</h4>
+              </div>
+            </div>
+
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card">
+              <div class="cert-img-container">
+                <img src="assets/img/Cer4.png" alt="Certificate" class="cert-img">
+                <div class="cert-overlay">
+                  <a href="https://www.skills.google/public_profiles/cd7a7f81-ee20-4667-8521-06596ab35885/badges/5485572"
+                    class="btn-cert-view" data-vi="XEM" data-en="VIEW">XEM</a>
+                </div>
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-name">Building No-Code Apps with AppSheet: Foundations</h4>
+              </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate-card">
+              <div class="cert-img-container">
+                <img src="assets/img/Cer5.jpeg" alt="Certificate" class="cert-img">
+                <div class="cert-overlay">
+                  <a href="https://coursera.org/share/04ebb1731449729f5697c82f879a91fd" class="btn-cert-view"
+                    data-vi="XEM" data-en="VIEW">XEM</a>
+                </div>
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-name">Google UX Design</h4>
+              </div>
+            </div>
+            <!-- Certificate 6 -->
+            <div class="certificate-card">
+              <div class="cert-img-container">
+                <img src="assets/img/Cer6.png" alt="Certificate" class="cert-img">
+                <div class="cert-overlay">
+                  <a href="https://learn.unity.com/u/686cb1f7edbc2a1fdf67f208" class="btn-cert-view" data-vi="XEM"
+                    data-en="VIEW">XEM</a>
+                </div>
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-name">Unity Essentials</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="contact-title" class="section-title" data-vi="Liên hệ" data-en="Contact Me">Liên hệ</h2>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Left: Social Links -->
+        <div class="contact-links">
+          <div class="contact-grid">
+            <a href="https://github.com/MinQuan-kun" target="_blank" class="contact-btn github">
+              <i class="devicon-github-original"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/nguyễn-hữu-minh-quân-92206139b" target="_blank"
+              class="contact-btn linkedin">
+              <i class="devicon-linkedin-plain"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.facebook.com/lkkunnn" target="_blank" class="contact-btn facebook">
+              <span class="icon">💙</span>
+              <span>Facebook</span>
+            </a>
+            <a href="tel:0966846502" class="contact-btn phone">
+              <span class="icon">📞</span>
+              <span>SĐT: 0966.846.502</span>
+            </a>
+            <a href="mailto:minquan2705@gmail.com" class="contact-btn email">
+              <span class="icon">📧</span>
+              <span>Email: minquan2705@gmail.com</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right: Discord Lanyard Card -->
+        <div class="contact-discord">
+          <div class="discord-card-container">
+            <div class="discord-card-header">
+              <span class="status-dot"></span>
+              <span data-vi="TRẠNG THÁI DISCORD" data-en="DISCORD STATUS">TRẠNG THÁI DISCORD</span>
+            </div>
+            <div class="discord-card-wrapper">
+              <img
+                src="https://lanyard.kyrie25.dev/api/757061413830131712?imgStyle=circle&animatedDecoration=true&hideProfile=false&showBanner=animated&bannerFilter=blur(5px)%20brightness(0.2)%20contrast(1.2)&gradient=6a11cb-2575fc&waveColor=transparent&waveSpotifyColor=transparent&borderRadius=20px&hideNameplate=true&hideClan=true"
+                alt="Discord Status" class="discord-lanyard">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <footer class="footer">
+        <p>&copy; 2024 - <span data-vi="Thiết kế bởi" data-en="Designed by">Thiết kế bởi</span> <span
+            class="gradient">Minh Quân</span></p>
+      </footer>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
