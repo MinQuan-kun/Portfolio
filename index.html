@@ -355,15 +355,14 @@
       <div class="project-filters">
         <button class="filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
         <button class="filter-btn" data-filter="web" data-vi="Web" data-en="Web">Web</button>
-        <button class="filter-btn" data-filter="soft" data-vi="Software/App"
-          data-en="Software/App">Software/App</button>
+        <button class="filter-btn" data-filter="app" data-vi="App" data-en="App">App</button>
         <button class="filter-btn" data-filter="game" data-vi="Game" data-en="Game">Game</button>
       </div>
 
       <!-- Projects Grid -->
       <div class="projects-grid">
         <!-- Project 1: Mirai Store -->
-        <div class="project-card" data-category="web">
+        <div class="project-card" data-category="web" data-featured="true">
           <div class="project-image-wrapper">
             <img src="assets/img/MiraiShop.png" alt="Mirai Store" class="project-img">
             <div class="project-overlay">
@@ -391,7 +390,7 @@
           </div>
         </div>
 
-        <div class="project-card" data-category="web">
+        <div class="project-card" data-category="web" data-featured="true">
           <div class="project-image-wrapper">
             <img src="assets/img/GameNode.png" alt="GameNode" class="project-img">
             <div class="project-overlay">
@@ -421,11 +420,12 @@
         </div>
 
         <!-- Project 3: 2d_platforme -->
-        <div class="project-card" data-category="game">
+        <div class="project-card" data-category="game" data-featured="true">
           <div class="project-image-wrapper">
             <img src="assets/img/2DPlatForm.png" alt="Basic Platform Game" class="project-img">
             <div class="project-overlay">
               <div class="overlay-links">
+                <a href="https://gamebeta2d.netlify.app" target="_blank" class="btn-detail">DEMO</a>
                 <a href="https://github.com/minquan-kun/2d_platformer" target="_blank" class="btn-detail">GITHUB</a>
               </div>
             </div>
@@ -449,14 +449,13 @@
         </div>
 
         <!-- Project 4: Cinema Galyxa -->
-        <div class="project-card" data-category="web">
+        <div class="project-card" data-category="web" data-featured="true">
           <div class="project-image-wrapper">
             <img src="assets/img/CinameGalyxa.png" alt="Ciname Galyxa" class="project-img">
             <div class="project-overlay">
               <div class="overlay-links">
                 <a href="https://github.com/minquan-kun/ciname_galyxa" target="_blank" class="btn-detail">GITHUB</a>
                 <a href="https://ciname-galyxa.onrender.com" target="_blank" class="btn-detail">DEMO</a>
-
               </div>
             </div>
           </div>
@@ -480,7 +479,7 @@
         </div>
 
         <!-- Project 5: Game by OpenGL -->
-        <div class="project-card" data-category="game">
+        <div class="project-card" data-category="game" data-featured="true">
           <div class="project-image-wrapper">
             <img src="assets/img/UsagiMon.png" alt="Game RPG by OpenGL" class="project-img">
             <div class="project-overlay">
@@ -507,7 +506,7 @@
         </div>
 
         <!-- Project 6: InterNetCoffee -->
-        <div class="project-card" data-category="web">
+        <div class="project-card" data-category="web" data-featured="true">
           <div class="project-image-wrapper">
             <img src="assets/img/InternetCoffee.png" alt="CyberOps Manager" class="project-img">
             <div class="project-overlay">
@@ -536,7 +535,36 @@
             </div>
           </div>
         </div>
-      </div>      
+
+        <!-- Project 7: MikuPix -->
+        <div class="project-card" data-category="web" data-featured="false">
+          <div class="project-image-wrapper">
+            <img src="assets/img/MikuPix.png" alt="MikuPix Aesthetic Board Maker" class="project-img">
+            <div class="project-overlay">
+              <div class="overlay-links">
+                <a href="https://minquan-kun.github.io/MikuPix/" target="_blank" class="btn-detail">DEMO</a>
+                <a href="https://github.com/minquan-kun/MikuPix" target="_blank" class="btn-detail">GITHUB</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">FRONTEND WEB DEVELOPMENT</span>
+            <h3 class="project-title">MikuPix</h3>
+            <p class="project-desc"
+              data-vi="Ứng dụng web tĩnh giúp tạo và tùy chỉnh bảng giới thiệu bản thân (Intro Board) phong cách Canva. Tích hợp tính năng kéo thả ảnh, bộ lọc màu và xuất ảnh sắc nét."
+              data-en="A static web app for creating and customizing Canva-style aesthetic intro boards. Features include drag-and-drop image panning, custom filters, and high-quality exports.">
+              Ứng dụng web tĩnh giúp tạo và tùy chỉnh bảng giới thiệu bản thân (Intro Board) phong cách Canva. Tích hợp
+              tính năng kéo thả ảnh, bộ lọc màu và xuất ảnh sắc nét.
+            </p>
+            <div class="project-tags">
+              <span class="tag highlight">Vanilla JS</span>
+              <span class="tag highlight">HTML5 / CSS3</span>
+              <span class="tag">html2canvas</span>
+              <span class="tag">Glassmorphism</span>
+              <span class="tag">Web App</span>
+            </div>
+          </div>
+        </div>
     </div>
   </section>
 
@@ -733,7 +761,7 @@
             </div>
             <div class="discord-card-wrapper">
               <img
-                src="https://lanyard.kyrie25.dev/api/757061413830131712?imgStyle=circle&animatedDecoration=true&hideProfile=false&showBanner=animated&bannerFilter=blur(5px)%20brightness(0.2)%20contrast(1.2)&gradient=6a11cb-2575fc&waveColor=transparent&waveSpotifyColor=transparent&borderRadius=20px&hideNameplate=true&hideClan=true"
+                src="https://lanyard.kyrie25.dev/api/757061413830131712?imgStyle=circle&animatedDecoration=true&hideProfile=false&showBanner=animated&bannerFilter=blur(5px)%20brightness(0.2)%20contrast(1.2)&gradient=6a11cb-2575fc&waveColor=transparent&waveSpotifyColor=transparent&borderRadius=20px&hideNameplate=false&hideClan=false"
                 alt="Discord Status" class="discord-lanyard">
             </div>
           </div>

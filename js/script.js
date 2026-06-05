@@ -88,6 +88,32 @@ function updateTypography() {
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
+function filterProjects(filterValue) {
+    projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const isFeatured = card.getAttribute('data-featured') === 'true';
+
+        let shouldShow = false;
+        if (filterValue === 'all') {
+            shouldShow = isFeatured;
+        } else {
+            shouldShow = (category === filterValue);
+        }
+
+        if (shouldShow) {
+            card.style.display = 'flex';
+            // Animation nhẹ khi hiện
+            card.style.opacity = '0';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transition = 'opacity 0.4s ease';
+            }, 10);
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         // Cập nhật nút active
@@ -95,22 +121,12 @@ filterBtns.forEach(btn => {
         btn.classList.add('active');
 
         const filterValue = btn.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                card.style.display = 'flex';
-                // Animation nhẹ khi hiện
-                card.style.opacity = '0';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transition = 'opacity 0.4s ease';
-                }, 10);
-            } else {
-                card.style.display = 'none';
-            }
-        });
+        filterProjects(filterValue);
     });
 });
+
+// Khởi chạy hiển thị mặc định ban đầu
+filterProjects('all');
 
 styleToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('pixel-style');
