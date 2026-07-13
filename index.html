@@ -16,6 +16,9 @@
 </head>
 
 <body>
+  <!-- Dynamic Backgrounds -->
+  <canvas id="shapegrid-canvas" class="shapegrid-canvas"></canvas>
+  <div id="pixelsnow-container" class="pixelsnow-canvas-container"></div>
 
   <!-- Navigation-->
   <nav id="navbar" class="navbar">
@@ -34,6 +37,7 @@
 
       <div class="nav-right">
         <ul class="nav-links">
+          <div class="nav-active-pill"></div>
           <li><a href="#about" data-vi="Giới thiệu" data-en="About me">Giới thiệu</a></li>
           <li><a href="#skills" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</a></li>
           <li><a href="#projects" data-vi="Dự án" data-en="Projects">Dự án</a></li>
@@ -807,6 +811,19 @@
       </footer>
     </div>
   </section>
+
+  <!-- GSAP & Canvas dependency libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- React Bits custom vanilla components -->
+  <script src="js/TextType.js"></script>
+  <script src="js/PixelTransition.js"></script>
+  <script src="js/LogoLoop.js"></script>
+  <script src="js/TrueFocus.js"></script>
+  <script src="js/ShapeGrid.js"></script>
+  <script src="js/SpotlightCard.js"></script>
+  <script src="js/TargetCursor.js"></script>
+  <script type="module" src="js/PixelSnow.js"></script>
 
   <script src="js/script.js"></script>
 </body>

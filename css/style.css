@@ -42,6 +42,11 @@
     padding: 0 20px;
 }
 
+html,
+body {
+    overflow-x: hidden; /* Prevent horizontal page shifting and scrollbars */
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -153,35 +158,79 @@ body {
 /* --- Layout Navigation --- */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--nav-height);
-    background-color: var(--nav-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--glass-border);
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    max-width: 1200px;
+    height: 65px;
+    background: rgba(13, 17, 23, 0); /* Transparent background color at top */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0); /* Transparent border at top */
+    border-radius: 50px;
     z-index: 1000;
     display: flex;
     align-items: center;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    box-shadow: none;
+    opacity: 1; /* Always fully visible items */
+    pointer-events: auto; /* Always clickable */
+    transition: max-width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease,
+                backdrop-filter 0.4s ease;
+}
+
+.navbar.scrolled {
+    max-width: 1200px; /* Keep exact spacing and position of last git version */
+    background: rgba(13, 17, 23, 0.45); /* "tăng opacity lên 45" - background glass opacity is 0.45! */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-color: var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.45); /* light theme glass background with 0.45 opacity! */
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* 8-Bit Navbar Overrides */
 .pixel-style .navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    max-width: 1200px;
+    height: 65px;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background-color: #f3f4f6;
-    /* Light retro grey */
-    border-bottom: 4px solid #000;
-    height: 65px;
+    background: rgba(243, 244, 246, 0); /* Transparent at top */
+    border: 3px solid rgba(0, 0, 0, 0); /* Transparent at top */
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transition: max-width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
 }
 
-[data-theme="dark"] .pixel-style .navbar {
-    background-color: #000000;
-    /* Solid retro blue in Dark Mode */
-    border-bottom: 4px solid #fff;
+.pixel-style .navbar.scrolled {
+    max-width: 1200px;
+    background: rgba(243, 244, 246, 0.45); /* 45% background opacity in light retro */
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0 #000;
+}
+
+[data-theme="dark"] .pixel-style .navbar.scrolled {
+    background: rgba(0, 0, 0, 0.45); /* 45% background opacity in dark retro */
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0 #fff;
 }
 
 .nav-container {
@@ -189,10 +238,15 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 24px;
     position: relative;
+}
+
+.pixel-style .nav-container {
+    padding: 0 40px;
+    max-width: 1400px;
 }
 
 /* Left Section: Mascot + Links */
@@ -200,8 +254,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-top: 8px;
-    /* Lowering the left section elements */
+    margin-top: 0;
 }
 
 /* Avatar Logo Styling */
@@ -256,9 +309,16 @@ body {
 }
 
 .nav-links {
+    position: relative;
     display: flex;
     align-items: center;
     list-style: none;
+    margin-top: 0;
+    gap: 6px; /* Spacing like last git version */
+    z-index: 2;
+}
+
+.pixel-style .nav-links {
     margin-top: 15px;
     gap: 20px;
 }
@@ -271,28 +331,76 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: color 0.25s ease;
     position: relative;
+    z-index: 3;
+    display: block;
+}
+
+.pixel-style .nav-links a {
+    padding: 0;
+    border-radius: 0;
+}
+
+.nav-links a.active {
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
+}
+
+[data-theme="light"] .nav-links a.active {
+    color: #0284c7 !important; /* high contrast bright sky-blue on light theme */
+    text-shadow: none;
+}
+
+.pixel-style .nav-links a.active {
+    color: #000 !important;
+}
+
+[data-theme="dark"] .pixel-style .nav-links a.active {
+    color: var(--accent-color) !important;
 }
 
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
+    display: none !important;
 }
 
 .nav-links a:hover {
     color: var(--accent-color);
-    transform: translateY(-2px);
 }
 
-.nav-links a:hover::after {
-    width: 100%;
+.nav-active-pill {
+    position: absolute;
+    background: var(--accent-color);
+    border-radius: 30px;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+}
+
+[data-theme="light"] .nav-active-pill {
+    background: #0d1117;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pixel-style .nav-active-pill {
+    border-radius: 0 !important;
+    background: var(--accent-color) !important;
+    border: 3px solid #000 !important;
+    box-shadow: 4px 4px 0 #000 !important;
+}
+
+[data-theme="dark"] .pixel-style .nav-active-pill {
+    background: transparent !important;
+    border-color: #fff !important;
+    box-shadow: 4px 4px 0 #fff !important;
 }
 
 /* Mascot Item */
@@ -316,8 +424,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 8px;
-    /* Lowering the buttons more as requested */
+    margin-top: 0; /* Remove top offset to vertically center controls inside modern navbar */
 }
 
 .nav-right {
@@ -796,24 +903,20 @@ body {
     display: inline-block;
 }
 
-.btn-primary {
-    background: var(--accent-color);
-    color: #000;
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
-}
-
+.btn-primary,
 .btn-outline {
     border: 2px solid var(--accent-color);
     color: var(--accent-color);
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
+.btn-primary:hover,
 .btn-outline:hover {
-    background: rgba(0, 242, 255, 0.1);
+    transform: translateY(-3px);
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
 }
 
 /* Chỉ số Stats */
@@ -915,7 +1018,7 @@ body {
     background-color: #0d1117;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -938,10 +1041,41 @@ body {
     box-shadow: 0 20px 40px rgba(0, 242, 255, 0.1);
 }
 
+/* Hover Jitter (Flicker) Fix: Create a pseudo-element bridge below translating cards */
+.project-card::after,
+.skill-category-card::after,
+.certificate-card::after,
+.discord-card-container::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.project-card:hover::after,
+.skill-category-card:hover::after,
+.certificate-card:hover::after,
+.discord-card-container:hover::after {
+    pointer-events: auto;
+}
+
+/* Inherit border-radius to prevent spotlight bleed when overflow: visible is set */
+.project-card::before,
+.skill-category-card::before,
+.discord-card-container::before,
+.contact-card-container::before {
+    border-radius: inherit;
+}
+
 .project-image-wrapper {
     position: relative;
     height: 200px;
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
 }
 
 .project-img {
@@ -1260,6 +1394,10 @@ body {
     /* No floating animation in 8-bit */
 }
 
+.pixel-style .project-image-wrapper {
+    border-radius: 0 !important;
+}
+
 [data-theme="dark"] .pixel-style .skill-category-card,
 [data-theme="dark"] .pixel-style .tech-item,
 [data-theme="dark"] .pixel-style .project-card {
@@ -1394,7 +1532,7 @@ body {
     padding: 25px;
     /* Thu nhỏ padding */
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -1711,7 +1849,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid var(--glass-border);
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
@@ -1754,6 +1892,7 @@ body {
     overflow: hidden;
     background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), #0d1117);
     display: flex;
+    border-radius: 12px 12px 0 0;
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid var(--glass-border);
@@ -1841,6 +1980,10 @@ body {
     border: 3px solid #000;
     border-radius: 0;
     box-shadow: 4px 4px 0 #000;
+}
+
+.pixel-style .cert-img-container {
+    border-radius: 0 !important;
 }
 
 [data-theme="dark"] .pixel-style .achievement-item,
@@ -2124,4 +2267,425 @@ body {
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
+}
+
+/* ================================================
+   ShapeGrid & Galaxy Dynamic Backgrounds
+   ================================================ */
+.shapegrid-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Use 100% instead of 100vw to exclude scrollbar width */
+    height: 100vh;
+    z-index: -1; /* Render in front of default browser window background */
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+body.shapegrid-active {
+    background-color: transparent !important;
+}
+
+body.shapegrid-active .shapegrid-canvas {
+    opacity: 1;
+}
+
+body.shapegrid-active section,
+body.shapegrid-active .skills-section,
+body.shapegrid-active .projects-section,
+body.shapegrid-active .achievements-section,
+body.shapegrid-active .contact-section {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.pixelsnow-canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Use 100% instead of 100vw to exclude scrollbar width */
+    height: 100vh;
+    z-index: -1; /* Render in front of default browser window background */
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    background-color: #020617;
+}
+
+body.pixelsnow-active {
+    background-color: transparent !important;
+}
+
+body.pixelsnow-active .pixelsnow-canvas-container {
+    opacity: 1;
+}
+
+body.pixelsnow-active section,
+body.pixelsnow-active .skills-section,
+body.pixelsnow-active .projects-section,
+body.pixelsnow-active .achievements-section,
+body.pixelsnow-active .contact-section {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+
+/* ================================================
+   TrueFocus Viewfinder Brackets
+   ================================================ */
+.focus-frame {
+    position: absolute;
+    pointer-events: none;
+    box-sizing: border-box;
+    border: none;
+    z-index: 1;
+}
+
+.focus-frame .corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--border-color, var(--accent-color));
+    filter: drop-shadow(0px 0px 4px var(--glow-color, rgba(0, 242, 255, 0.4)));
+    border-radius: 2px;
+    transition: none;
+}
+
+.focus-frame .top-left {
+    top: -6px;
+    left: -6px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.focus-frame .top-right {
+    top: -6px;
+    right: -6px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.focus-frame .bottom-left {
+    bottom: -6px;
+    left: -6px;
+    border-right: none;
+    border-top: none;
+}
+
+.focus-frame .bottom-right {
+    bottom: -6px;
+    right: -6px;
+    border-left: none;
+    border-top: none;
+}
+
+
+.technologies-grid.logoloop-initialized {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+}
+
+.logoloop {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    --logoloop-gap: 40px;
+    --logoloop-logoHeight: 50px;
+    --logoloop-fadeColor: var(--bg-color);
+}
+
+.logoloop__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    user-select: none;
+    position: relative;
+    z-index: 0;
+    padding: 10px 0;
+}
+
+.logoloop__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logoloop__item {
+    flex: 0 0 auto;
+    margin-right: var(--logoloop-gap);
+    font-size: var(--logoloop-logoHeight);
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logoloop__node {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, background 0.3s ease;
+}
+
+.pixel-style .logoloop__node {
+    border-radius: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+    border: 3px solid #000 !important;
+    box-shadow: 4px 4px 0 #000 !important;
+}
+
+[data-theme="dark"] .pixel-style .logoloop__node {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: 4px 4px 0 #fff !important;
+}
+
+.logoloop--scale-hover .logoloop__item:hover .logoloop__node {
+    transform: scale(1.08);
+    border-color: var(--accent-color);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+.logoloop__node i {
+    font-size: 28px;
+}
+
+.logoloop__node span {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+.logoloop--fade::before,
+.logoloop--fade::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(30px, 12%, 180px);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.logoloop--fade::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        var(--logoloop-fadeColor) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.logoloop--fade::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        var(--logoloop-fadeColor) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+/* ================================================
+   SpotlightCard Glow Effects (Non-gaming only)
+   ================================================ */
+.card-spotlight {
+    position: relative;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --spotlight-color: rgba(0, 242, 255, 0.12); /* hatsune miku cyan spotlight */
+}
+
+/* Light mode spotlight color */
+[data-theme="light"] .card-spotlight {
+    --spotlight-color: rgba(0, 180, 216, 0.08); /* light theme blue spotlight */
+}
+
+.card-spotlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1; /* just below content but above background */
+    border-radius: inherit; /* respects card border-radius */
+}
+
+body:not(.pixel-style) .card-spotlight:hover::before {
+    opacity: 1;
+}
+
+/* ================================================
+   TargetCursor Styles (Dynamic snap-on custom cursor)
+   ================================================ */
+.target-cursor-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+}
+
+.target-cursor-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+.target-cursor-corner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #fff;
+    will-change: transform;
+}
+
+.corner-tl {
+    transform: translate(-150%, -150%);
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-tr {
+    transform: translate(50%, -150%);
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-br {
+    transform: translate(50%, 50%);
+    border-left: none;
+    border-top: none;
+}
+
+.corner-bl {
+    transform: translate(-150%, 50%);
+    border-right: none;
+    border-top: none;
+}
+
+/* Spacer for double-row logo loops */
+.tech-loop-row {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.tech-loop-row:last-child {
+    margin-bottom: 0;
+}
+
+/* ================================================
+   Glass Opacity for Cards (Modern Mode Only)
+   ================================================ */
+body:not(.pixel-style) .project-card,
+body:not(.pixel-style) .skill-category-card,
+body:not(.pixel-style) .discord-card-container,
+body:not(.pixel-style) .certificate-card {
+    background: transparent !important; /* Hoàn toàn trong suốt */
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important; /* Tắt làm mờ để thấy rõ nền động phía sau */
+    -webkit-backdrop-filter: none !important;
+}
+
+body:not(.pixel-style) .cert-img-container {
+    background: transparent !important; /* Xóa màu nền gradient đặc của khung ảnh chứng chỉ */
+}
+
+[data-theme="light"] body:not(.pixel-style) .project-card,
+[data-theme="light"] body:not(.pixel-style) .skill-category-card,
+[data-theme="light"] body:not(.pixel-style) .discord-card-container,
+[data-theme="light"] body:not(.pixel-style) .certificate-card {
+    background: transparent !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: none !important;
+}
+
+[data-theme="light"] body:not(.pixel-style) .cert-img-container {
+    background: transparent !important;
+}
+
+/* Hide static background blobs in Hero */
+.shape {
+    display: none !important;
+}
+
+/* ================================================
+   PixelTransition Styles (Gaming Mode Project Card Hover)
+   ================================================ */
+.project-image-wrapper .pixelated-image-card {
+    background-color: transparent;
+    color: inherit;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pixelated-image-card__default,
+.pixelated-image-card__active,
+.pixelated-image-card__pixels {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pixelated-image-card__active {
+    z-index: 2;
+    display: none;
+}
+
+.pixelated-image-card__pixels {
+    pointer-events: none;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pixelated-image-card__pixel {
+    display: none;
+    position: absolute;
+}
+
+/* GitHub light theme hover color contrast fix */
+[data-theme="light"] .contact-btn.github:hover {
+    color: #000000 !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08) !important;
 }
